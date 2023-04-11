@@ -1,9 +1,18 @@
-import React from 'react'
+import axios from 'axios'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { selectCount } from './counterSlice'
 import {increment, decrement} from './counterSlice'
 
+const dataUrl = process.env.REACT_APP_BASE_URL
+
 const Testpage = () => {
+  
+  axios.get(`${dataUrl}`)
+  .then(res=>res.data)
+  .then(res=>console.log(res))
+
+
 
   const count = useSelector(selectCount)
   const dispatch = useDispatch()

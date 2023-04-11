@@ -12,14 +12,21 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}))
 
+const data = []
 
-fetch("db.json")
+fetch(`https://fakestoreapi.com/products`)
   .then(response => response.json())
+  // .then(res=>res.data)
+  .then(res=>{
+    data.push(...res)
+    return res
+  })
   .then(json => console.log(json));
 
 app.get("/", (req, res) => {
 
-    console.log(req)
+  res.send(data)
+    // console.log(req)
   
 })
 
