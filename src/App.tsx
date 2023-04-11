@@ -1,13 +1,16 @@
-
+import {Routes, Route} from 'react-router-dom'
+import './main.scss'
+import Header from './header/Header';
+import Testpage from './test/Testpage';
 
 function App() {
   return (
     <div className="App">
 
-
-<h1 className="text-3xl font-bold underline">
-      Tailwind isleyir!
-    </h1>
+  <Header/>
+    <Routes>
+      <Route path='/test' element = {<Testpage/>}/>
+    </Routes>
     </div>
   );
 }
