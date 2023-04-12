@@ -20,7 +20,7 @@ const initialState:calcType = {
 }
 
         const returnResult = (state:calcType, act:string):string=>{
-            if(state.operator === ''){
+            if(state.operator === '' || state.operator === '='){
                
                 if(state.result !== ''){
                     state.operand1 = state.result;
@@ -96,14 +96,30 @@ const calcSlice = createSlice({
         },
 
         first: (state, action)=>{
+            if(state.operator !== '='){
+                
             state.result += action.payload
-            state.screen = state.operand1+ state.operator+ state.result
+                state.screen = state.operand1+ state.operator+ state.result
+            
+            }
+            else{ 
+                state.operator = ''
+                state.result = state.operand1 + action.payload
+                state.screen = state.result
+                state.operand1 = ''
+        }
+            
+            
         },
         equal: (state, action)=>{
-            returnResult(state, action.payload);
-            state.screen = state.operand1
-            state.result = state.operand1
-            state.operator = ''
+            
+            if(state.result !== ''){
+                returnResult(state,action.payload);
+                state.result = state.operand1
+            state.screen = state.result
+            state.operator = '='
+            }
+            
         },
         clean: (state) => {
              state.result = '';
@@ -113,8 +129,14 @@ const calcSlice = createSlice({
             
         },
         breakSpace: (state) => {
+
+            if(state.operator === '='){
+              state.operator = ''
+              state.operand1 = ''
+            }
             state.result = state.result.slice(0,state.result.length-1)
             state.screen = state.operand1+ state.operator+ state.result
+           
         }
     }
 })
