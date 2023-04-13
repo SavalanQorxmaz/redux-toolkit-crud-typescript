@@ -4,17 +4,18 @@ import {useDispatch, useSelector} from 'react-redux'
 import { selectCount } from './counterSlice'
 import {increment, decrement} from './counterSlice'
 import Calculator from './Calculator'
+import Crud from './crud/Crud'
 
 const dataUrl = process.env.REACT_APP_BASE_URL
 
 const Testpage = () => {
- useEffect(()=>{
+// useEffect(()=>{
    
-  axios.get(`${dataUrl}`)
-  .then(res=>res.data)
-  .then(res=>console.log(res))
+//   axios.get(`${dataUrl}`)
+//   .then(res=>res.data)
+//   .then(res=>console.log(res))
 
- }, [])
+//  }, []) 
 
 
   const count = useSelector(selectCount)
@@ -25,13 +26,14 @@ const Testpage = () => {
               Tailwind isleyir!
             </h1>
 
-           <div className='border-4 border-emerald-950 w-10/12 h-12 flex items-center text-3xl mt-10 justify-evenly'>
+           <div className='border-4 border-emerald-950 w-1/4 h-12 flex items-center text-3xl mt-10 justify-evenly'>
            <button onClick={()=>dispatch(decrement())}>-</button>
             <span>{count}</span>
             <button  onClick={()=>dispatch(increment())}>+</button>
            </div>
 
            <Calculator/>
+           <Crud/>
     </div>
   )
 }

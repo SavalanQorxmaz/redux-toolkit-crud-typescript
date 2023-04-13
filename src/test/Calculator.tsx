@@ -9,7 +9,7 @@ const Calculator = () => {
     const dispatch = useDispatch()
     
   return (
-      <div className='calculator w-64 h-80 border-black border-solid border-4 mt-10 grid grid-flow-row grid-cols-4 gap-2 p-2' >
+      <div className='calculator select-none w-64 h-80 border-black border-solid border-4 mt-10 grid grid-flow-row grid-cols-4 gap-2 p-2' >
           <div className='border-2 border-black w-full h-12 text-xl font-bold col-span-4 text-right p-1'>{currentNumber}</div>
           <div onClick={()=>dispatch(clean())} className=' border-2 border-black text-center text-xl font-bold cursor-pointer  rounded-xl'>C</div>
           <div onClick={()=>dispatch(breakSpace())} className='border-2 border-black col text-center text-xl font-bold cursor-pointer rounded-xl'>{`<-`}</div>
