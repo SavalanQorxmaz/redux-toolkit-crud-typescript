@@ -1,5 +1,5 @@
 
-import {createSlice, Action} from'@reduxjs/toolkit';
+import {createSlice} from'@reduxjs/toolkit';
 
 const initialState = {
     count: 0

@@ -18,14 +18,9 @@ const Header = () => {
                 <Link to={'/'}>Home</Link>
               </li>
               <li>
-                <Link to={'link1'}>link1</Link>
+                <Link to={'/calculator'}>Calculator</Link>
               </li>
-              <li>
-                <Link to={'/link2'}>link2</Link>
-              </li>
-              <li>
-                <Link to={'/test'}>Test Page</Link>
-              </li>
+             
             </ul>
            </nav>
             </div>

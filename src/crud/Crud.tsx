@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {GET, POST, DELETE, UPDATE} from '../../methods'
+import {GET, POST, DELETE, UPDATE} from '../methods'
 
 
 

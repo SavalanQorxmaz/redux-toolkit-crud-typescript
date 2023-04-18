@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { selectCount } from './counterSlice'
 import {increment, decrement} from './counterSlice'
 import Calculator from './Calculator'
-import Crud from './crud/Crud'
+import Crud from '../crud/Crud'
 
 const dataUrl = process.env.REACT_APP_BASE_URL
 

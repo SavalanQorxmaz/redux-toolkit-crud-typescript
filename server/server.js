@@ -33,7 +33,7 @@ app.get("/getArray", (req, res) => {
 })
 
 app.post('/postData', (req, res)=>{
-  console.log(req.body.text)
+  // console.log(req.body.text)
   db.push(req.body.text)
   res.send('elave edildi')
 })
@@ -45,7 +45,7 @@ app.post('/deleteData', (req, res)=>{
 })
 
 app.post('/updateData', (req, res)=>{
-  console.log(req.body.data.id)
+  // console.log(req.body.data.id)
   db[Number(req.body.data.id)] = req.body.data.text
   res.send('yenilendi')
 })

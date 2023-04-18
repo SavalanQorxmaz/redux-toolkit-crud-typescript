@@ -1,7 +1,8 @@
 import {Routes, Route} from 'react-router-dom'
 import './main.scss'
 import Header from './header/Header';
-import Testpage from './test/Testpage';
+import Calculator from './calculator/Calculator';
+import Crud from './crud/Crud';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
 
   <Header/>
     <Routes>
-      <Route path='/test' element = {<Testpage/>}/>
+      <Route path='/' element = {<Crud/>}/>
+      <Route path='/calculator' element = {<Calculator/>}/>
+      
     </Routes>
     </div>
   );
